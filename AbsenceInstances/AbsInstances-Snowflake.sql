@@ -4,16 +4,16 @@
 WITH all_records AS (
     -- Get all attendance records ordered by date
     SELECT
-        A.ATTENDANCE_ROLL_CALL_RECORD_UNIQUE_ID
-        ,A.STUDENT_UNIQUE_ID
-        ,A.APPLICATION_ID
-        ,A.DATE
-        ,A.ATTENDANCE_ROLL_CALL_ID
-        ,A.IS_PRESENT
-        ,A.IS_POSSIBLE_ATTENDANCE
-    FROM ARBOR_BI_CONNECTOR_PRODUCTION.ARBOR_MIS_ENGLAND_MODELLED.ROLL_CALL_ATTENDANCE AS A
-    WHERE A.DATE < '2025-12-31' 
-        AND A.DATE >= '2025-09-01'
+        a.ATTENDANCE_ROLL_CALL_RECORD_UNIQUE_ID
+        ,a.STUDENT_UNIQUE_ID
+        ,a.APPLICATION_ID
+        ,a.DATE
+        ,a.ATTENDANCE_ROLL_CALL_ID
+        ,a.IS_PRESENT
+        ,a.IS_POSSIBLE_ATTENDANCE
+    FROM ARBOR_BI_CONNECTOR_PRODUCTION.ARBOR_MIS_ENGLAND_MODELLED.ROLL_CALL_ATTENDANCE AS a
+    WHERE a.DATE < '2025-12-31' 
+        AND a.DATE >= '2025-09-01'
 ),
 with_groups AS (
     -- Create absence group IDs - increment whenever student is present

@@ -2,7 +2,8 @@
 
 ## Overview
 This script identifies continuous absence periods (instances) for students by grouping consecutive absences together, even when non-attendance days (weekends, holidays) occur in between.
-
+- [Absence Instances - Fabric Lakehouse](AbsInstances.py)
+- [Absence Instances - Direct Snowflake](AbsInstances-Snowflake.sql)
 ## How the Window Function Works
 
 ### The Key Window Function
